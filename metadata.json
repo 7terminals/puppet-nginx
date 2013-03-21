@@ -1,0 +1,23 @@
+{
+  "name": "puppet-nginx",
+  "author": "Francis Pereira",
+  "description": "",
+  "license": "",
+  "project_page": "https://github.com/7terminals/puppet-nginx",
+  "source": "https://github.com/7terminals/puppet-nginx",
+  "summary": "Puppet module to manage Nginx",
+  "version": "",
+  "checksums": {
+    "Modulefile": "42dec72077fb1435d7d9fd37290ade87",
+    "README.markdown": "5ca5dbe4908410ad8726f48c6904d950",
+    "README.md": "e83f246cd2e1681a5e39b29d046e2efe",
+    "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
+    "manifests\\init.pp": "09778d8b013e9fbb49b38c25d27fb7d6",
+    "manifests\\setup.pp": "eaa10683c687d7d31279dd590cd1c1fe",
+    "spec\\spec.opts": "a600ded995d948e393fbe2320ba8e51c",
+    "spec\\spec_helper.rb": "3ea886dd135e120afa31e0aab12e85b0",
+    "templates\\default-redhat-nginx.conf.erb": "d41d8cd98f00b204e9800998ecf8427e",
+    "tests\\init.pp": "f37bae99230baefce2323911caabca3a"
+  },
+  "dependencies": []
+}
