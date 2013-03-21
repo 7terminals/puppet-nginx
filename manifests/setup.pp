@@ -1,4 +1,4 @@
-class nginx::setup ($ensure = 'running', $enable = true, $autoupdate = false, $config = undef) {
+define nginx::setup ($ensure = 'running', $enable = true, $autoupdate = false, $config = undef) {
   if !($ensure in ['running', 'stopped']) {
     fail('ensure parameter must be running or stopped')
   }
@@ -47,9 +47,7 @@ class nginx::setup ($ensure = 'running', $enable = true, $autoupdate = false, $c
     mode    => 644,
     content => $config_tpl,
     notify  => Service['nginx'],
-    require => [
-      Package['nginx'],
-      File['/etc/nginx/conf.d/default.conf', '/etc/nginx/conf.d/ssl.conf', '/etc/nginx/conf.d/virtual.conf']],
+    require => [Package['nginx'], File['/etc/nginx/conf.d/default.conf', '/etc/nginx/conf.d/ssl.conf', '/etc/nginx/conf.d/virtual.conf']],
   }
 
   # Directory for ssl certificates. You can populate it with file using a File resource
