@@ -1,4 +1,8 @@
-define nginx::setup ($ensure = 'running', $enable = true, $autoupdate = false, $config = undef) {
+class nginx::setup (
+  $ensure     = 'running',
+  $enable     = true,
+  $autoupdate = false,
+  $config     = undef) {
   if !($ensure in ['running', 'stopped']) {
     fail('ensure parameter must be running or stopped')
   }
@@ -19,7 +23,7 @@ define nginx::setup ($ensure = 'running', $enable = true, $autoupdate = false, $
       $config_file = '/etc/nginx/nginx.conf'
 
       if $config == undef {
-        $config_tpl = template("${module_name}/default-redhat-nginx.conf.erb")
+        $config_tpl = template("${module_name}/default-nginx.conf.erb")
       } else {
         $config_tpl = template("${caller_module_name}/${config}")
       }
@@ -32,7 +36,7 @@ define nginx::setup ($ensure = 'running', $enable = true, $autoupdate = false, $
       $config_file = '/etc/nginx/nginx.conf'
 
       if $config == undef {
-        $config_tpl = template("${module_name}/default-redhat-nginx.conf.erb")
+        $config_tpl = template("${module_name}/default-nginx.conf.erb")
       } else {
         $config_tpl = template("${caller_module_name}/${config}")
       }

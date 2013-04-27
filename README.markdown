@@ -12,6 +12,8 @@ Module Description
 -------------------
 
 The Nginx module allows Puppet to install, configure and maintain the Nginx server.
+This module allows the flexibilty of simply adding file resources to populate the /etc/nginx/conf.d/ directory and make nginx behave accordingly. This module stays out of the way. It does not touch the conf.d directory which allows you the freedom to configure nginx with file resources by putting a valid nginx configuration file.
+
 
 Setup
 -----
@@ -83,6 +85,6 @@ Bug Reports
 Release Notes
 --------------
 
-**0.1.0**
+**0.0.1**
 
 First initial release.

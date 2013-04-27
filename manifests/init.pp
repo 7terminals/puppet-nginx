@@ -1,14 +1,23 @@
 # Class: nginx
 #
-# This module manages nginx
+# The Nginx module allows Puppet to install, configure and maintain
+# the Nginx server.
 #
-# Parameters: none
+# This module allows the flexibilty of simply adding file resources
+# to populate the /etc/nginx/conf.d/ directory and make nginx behave
+# accordingly. This module stays out of the way. It does not touch
+# the conf.d directory which allows you the freedom to configure
+# nginx with file resources by putting a valid nginx configuration file.
 #
-# Actions:
-#
-# Requires: see Modulefile
+# Parameters: ensure, enable, autoupdate, config
 #
 # Sample Usage:
+#    nginx::setup { 'example.com-nginx':
+#      ensure     => 'running',
+#      enable     => true,
+#      autoupdate => false,
+#      config     => 'example.com-nginx.conf'
+#    }
 #
 class nginx {
 
