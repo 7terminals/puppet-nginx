@@ -1,5 +1,5 @@
 name 'puppet-nginx'
-version ''
+version '0.0.1'
 
 author 'Francis Pereira'
 license ''
