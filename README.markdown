@@ -27,7 +27,7 @@ Setup
 
 To setup Nginx on a server
 
-    nginx::setup { 'example.com-nginx':
+    class { 'nginx::setup':
       ensure     => 'running',
       enable     => true,
       autoupdate => false,
