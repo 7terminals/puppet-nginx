@@ -12,11 +12,10 @@
 # Parameters: ensure, enable, autoupdate, config
 #
 # Sample Usage:
-#    nginx::setup { 'example.com-nginx':
+#    class { 'nginx::setup':
 #      ensure     => 'running',
 #      enable     => true,
-#      autoupdate => false,
-#      config     => 'example.com-nginx.conf'
+#      autoupdate => false
 #    }
 #
 class nginx {

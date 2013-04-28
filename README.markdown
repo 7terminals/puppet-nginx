@@ -59,7 +59,9 @@ Valid arguments are true or false. Default false
 ####`config`
 
 This parameter specifies the nginx.conf file to be placed in the nginx configuration directory. This is main configuration file for nginx.
-This file must be in the files directory in the caller module.
+If specified, this file must be in the files directory in the caller module.
+
+The default configuration file that is installed by default will allow you to put any valid nginx configuration file in /etc/nginx/conf.d/. By default, no files are placed here, and hence, nginx will not open any port.
 
 
 Limitations
