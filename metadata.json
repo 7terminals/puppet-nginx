@@ -6,18 +6,17 @@
   "project_page": "https://github.com/7terminals/puppet-nginx",
   "source": "https://github.com/7terminals/puppet-nginx",
   "summary": "Puppet module to manage Nginx",
-  "version": "",
+  "version": "0.0.1",
   "checksums": {
-    "Modulefile": "42dec72077fb1435d7d9fd37290ade87",
-    "README.markdown": "5ca5dbe4908410ad8726f48c6904d950",
-    "README.md": "e83f246cd2e1681a5e39b29d046e2efe",
+    "Modulefile": "ad0b38ba43ced3f97a4bd4dfd38f9ec3",
+    "README.markdown": "8f53fa2724ab14e5552f0f6f6508ac34",
     "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
-    "manifests\\init.pp": "09778d8b013e9fbb49b38c25d27fb7d6",
-    "manifests\\setup.pp": "c30b4ce77fb647300faeeaa77186d152",
+    "manifests\\init.pp": "31d0b6191e2e2a3587dd5b63635d47a6",
+    "manifests\\setup.pp": "34c590701a3fe66dd43bf01ce6cdee7b",
     "spec\\spec.opts": "a600ded995d948e393fbe2320ba8e51c",
     "spec\\spec_helper.rb": "3ea886dd135e120afa31e0aab12e85b0",
-    "templates\\default-redhat-nginx.conf.erb": "d41d8cd98f00b204e9800998ecf8427e",
-    "tests\\init.pp": "f37bae99230baefce2323911caabca3a"
+    "templates\\default-nginx.conf.erb": "ae3027fdd4803b210bc95ea49c627be6",
+    "tests\\init.pp": "28c226ffcdecf326b805a4188c850460"
   },
   "dependencies": []
 }
