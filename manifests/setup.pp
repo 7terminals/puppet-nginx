@@ -1,54 +1,34 @@
 class nginx::setup (
-  $ensure     = 'running',
-  $enable     = true,
-  $autoupdate = false,
-  $config     = undef) {
-  if !($ensure in ['running', 'stopped']) {
-    fail('ensure parameter must be running or stopped')
+  $ensure  = 'present',
+  $enable  = true,
+  $service = 'running',
+  $version = 'installed',
+  $config  = undef) {
+  if !($ensure in ['present', 'absent']) {
+    fail('ensure parameter must be present or absent')
   }
 
-  if $autoupdate == true {
-    $package_ensure = latest
-  } elsif $autoupdate == false {
-    $package_ensure = present
+  if !($enable in [true, false]) {
+    fail('enable parameter must be true or false')
+  }
+
+  if !($service in ['running', 'stopped']) {
+    fail('service parameter must be running or false')
+  }
+
+  if $config == undef {
+    $config_tpl = template("${module_name}/default-nginx.conf.erb")
   } else {
-    fail('autoupdate parameter must be true or false')
+    $config_tpl = template("${caller_module_name}/${config}")
   }
 
   case $::osfamily {
-    RedHat  : {
-      $supported = true
-      $pkg_name = ['nginx']
-      $svc_name = 'nginx'
-      $config_file = '/etc/nginx/nginx.conf'
-
-      if $config == undef {
-        $config_tpl = template("${module_name}/default-nginx.conf.erb")
-      } else {
-        $config_tpl = template("${caller_module_name}/${config}")
-      }
-
-    }
-    Debian  : {
-      $supported = true
-      $pkg_name = ['nginx']
-      $svc_name = 'nginx'
-      $config_file = '/etc/nginx/nginx.conf'
-
-      if $config == undef {
-        $config_tpl = template("${module_name}/default-nginx.conf.erb")
-      } else {
-        $config_tpl = template("${caller_module_name}/${config}")
-      }
-    }
-    default : {
-      fail("${module_name} module is not supported on ${::osfamily} based systems")
-    }
+    RedHat  : { }
+    Debian  : { }
+    default : { fail("${module_name} module is not supported on ${::osfamily} based systems") }
   }
 
-  package { 'nginx':
-    ensure => $package_ensure,
-  }
+  package { 'nginx': ensure => $version, }
 
   # Make sure we have removed all the config files that come by default
   # We don't want a welcome to Nginx page running on a production server
@@ -81,7 +61,7 @@ class nginx::setup (
   }
 
   service { 'nginx':
-    ensure     => $ensure,
+    ensure     => $service,
     enable     => $enable,
     hasrestart => true,
     hasstatus  => true,
