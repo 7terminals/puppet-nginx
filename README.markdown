@@ -28,9 +28,10 @@ Setup
 To setup Nginx on a server
 
     class { 'nginx::setup':
-      ensure     => 'running',
-      enable     => true,
-      autoupdate => false,
+      ensure     => 'present',
+      enable     => 'true',
+	  service 	 => 'running'
+	  version 	 => 'installed'
       config     => 'example.com-nginx.conf'
     }
 
@@ -43,18 +44,23 @@ The `nginx::setup` resource definition has several parameters to assist installa
 
 ####`ensure`
 
-This parameter specifies whether the nginx service should be running or not.
-Valid arguments are "running" or "stopped". Default "running"
+This parameter specifies whether the resource defination is present or absent.
+Valid arguments are 'present' or 'absent'. Default 'present'
 
 ####`enable`
 
 This parameter specifies whether nginx should be enabled to start automatically on system boot.
-Valid arguments are true or false. Default true
+Valid arguments are 'true' or 'false'. Default 'true'
 
-####`autoupdate`
+####`service`
 
-This parameter specifies whether nginx should be updated when a new version is available or not.
-Valid arguments are true or false. Default false
+This parameter specifies whether service nginx should be running or stopped.
+Valid arguments are 'running' or 'stopped'. Default 'running'
+
+####`version`
+
+This parameter specified whether package nginx is autoupdated to latest or just installed and never updated or set to a particular version number
+Valid arguments are 'installed' or 'latest' or '<package_version_number>'. Default 'installed'
 
 ####`config`
 
@@ -86,6 +92,9 @@ Bug Reports
 
 Release Notes
 --------------
+**0.0.2**
+
+\#1 module must allow specifying nginx package version
 
 **0.0.1**
 

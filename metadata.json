@@ -6,10 +6,10 @@
   "project_page": "https://github.com/7terminals/puppet-nginx",
   "source": "https://github.com/7terminals/puppet-nginx",
   "summary": "The Nginx module installs and maintains the configuration of the Nginx server.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "checksums": {
-    "Modulefile": "336e64e8dbffb44dbc5d66c97551f251",
-    "README.markdown": "df2c456cceb172c171c857288161e392",
+    "Modulefile": "4751b40a0814486d9f179dbba0ce8b46",
+    "README.markdown": "f36b7dffa2293f7ca6f4ff50b2d42eb0",
     "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
     "manifests\\init.pp": "31d0b6191e2e2a3587dd5b63635d47a6",
     "manifests\\setup.pp": "5c3266770d3c769105095c80e4c9212f",
