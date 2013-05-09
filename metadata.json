@@ -12,7 +12,7 @@
     "README.markdown": "df2c456cceb172c171c857288161e392",
     "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
     "manifests\\init.pp": "31d0b6191e2e2a3587dd5b63635d47a6",
-    "manifests\\setup.pp": "170add36b0f69d62641f64e223dd049b",
+    "manifests\\setup.pp": "5c3266770d3c769105095c80e4c9212f",
     "spec\\spec.opts": "a600ded995d948e393fbe2320ba8e51c",
     "spec\\spec_helper.rb": "3ea886dd135e120afa31e0aab12e85b0",
     "templates\\default-nginx.conf.erb": "ae3027fdd4803b210bc95ea49c627be6",

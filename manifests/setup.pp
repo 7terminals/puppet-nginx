@@ -8,7 +8,7 @@ class nginx::setup (
     fail('ensure parameter must be present or absent')
   }
 
-  if !($enable in [true, false]) {
+  if !($enable in ['true', 'false']) {
     fail('enable parameter must be true or false')
   }
 
