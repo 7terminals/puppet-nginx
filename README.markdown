@@ -30,9 +30,9 @@ To setup Nginx on a server
     class { 'nginx::setup':
       ensure     => 'present',
       enable     => 'true',
-	  service 	 => 'running'
-	  version 	 => 'installed'
-      config     => 'example.com-nginx.conf'
+      service 	 => 'running',
+      version 	 => 'installed',
+      config     => 'example.com-nginx.conf',
     }
 
 Usage
