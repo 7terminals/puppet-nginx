@@ -7,7 +7,7 @@
   "types": [],
   "checksums": {
     "Modulefile": "4751b40a0814486d9f179dbba0ce8b46",
-    "README.markdown": "f36b7dffa2293f7ca6f4ff50b2d42eb0",
+    "README.markdown": "a12bee5fc20a4aae2b3a0fbd4aecc0f2",
     "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
     "manifests\\init.pp": "31d0b6191e2e2a3587dd5b63635d47a6",
     "manifests\\setup.pp": "7c2a4d1add991145c6af89aa312521a8",
