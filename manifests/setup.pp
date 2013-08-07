@@ -4,15 +4,21 @@ class nginx::setup (
   $service = 'running',
   $version = 'installed',
   $config  = undef) {
-  if !($ensure in ['present', 'absent']) {
+  if !($ensure in [
+    'present',
+    'absent']) {
     fail('ensure parameter must be present or absent')
   }
 
-  if !($enable in ['true', 'false']) {
+  if !($enable in [
+    true,
+    false]) {
     fail('enable parameter must be true or false')
   }
 
-  if !($service in ['running', 'stopped']) {
+  if !($service in [
+    'running',
+    'stopped']) {
     fail('service parameter must be running or false')
   }
 
@@ -32,7 +38,10 @@ class nginx::setup (
 
   # Make sure we have removed all the config files that come by default
   # We don't want a welcome to Nginx page running on a production server
-  file { ['/etc/nginx/conf.d/default.conf', '/etc/nginx/conf.d/ssl.conf', '/etc/nginx/conf.d/virtual.conf']:
+  file { [
+    '/etc/nginx/conf.d/default.conf',
+    '/etc/nginx/conf.d/ssl.conf',
+    '/etc/nginx/conf.d/virtual.conf']:
     ensure  => absent,
     require => Package['nginx']
   }
